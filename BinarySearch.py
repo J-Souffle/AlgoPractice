@@ -1,20 +1,19 @@
 nums = [1, 3, 5, 2, 9]
 
-def BinarySearch(self, inputArray, target):
+def BinarySearch(inputArray, target):
     inputArray = sorted(inputArray)
-    l, r = nums[0], nums[len(nums)]
+    l, r = 0 , len(inputArray) - 1
     
-    while l < r:
-        current = (r - l) // 2
-        if current < target:
-            r = current
-        elif current > target:
-            l = current
-        elif current == target:
+    while l <= r:
+        current = (l + r) // 2
+        if inputArray[current] < target:
+            l = current + 1
+        elif inputArray[current] > target:
+            r = current - 1
+        elif inputArray[current] == target:
             return current
-        else:
-            return -1
-    return
+    return -1
 
+print(BinarySearch(nums, 9))
 
         
