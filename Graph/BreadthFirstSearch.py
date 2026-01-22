@@ -3,7 +3,7 @@ from collections import deque
 
 class TreeNode:
     def __init__(self, value):
-        self.node = value
+        self.val = value
         self.left = None
         self.right = None
     
@@ -16,7 +16,7 @@ class TreeNode:
         # loop until queue is empty
         while queue:
             # pop the oldest node (left side of dequeue)
-            current = queue.popleft
+            current = queue.popleft()
             result.append(current.val)
 
             # add children to the back of the queue
